@@ -53,6 +53,14 @@ Conference: AAAI-26 (AAAI Conference on Artificial Intelligence)
 ICORE Ranking: A* 
 Research Gap: PriLLM uses real OpenRouter data to model user preferences and optimize LLM service prices, achieving near-optimal profit with lower computation time. However, its evaluation focuses on LLM service routing rather than general retail pricing, and its model does not explicitly address calibrated demand uncertainty or inventory constraints. Future research could adapt its data-calibration approach to retail transaction data and combine it with uncertainty-aware pricing and inventory controls to protect profit and reduce stockout risk under changing demand.
 
+6.Conformal Policy Control ************
+CONFERENCE : ICML
+ICORE RANKING : A*
+
+
+7.ONLINE CONFORMAL PREDICTION WITH ADVERSARIAL SEMI-BANDIT FEEDBACK VIA REGRET MINIMIZATION
+
+
 
 
 
