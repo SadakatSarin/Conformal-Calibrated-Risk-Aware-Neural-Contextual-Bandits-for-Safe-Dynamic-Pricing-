@@ -1,1 +1,26 @@
+***How we will build the AI model***  
 
+
+Module A — Demand prediction
+Train a demand model using price, past sales, calendar features and product information. Begin with LightGBM as a baseline, then implement a small neural network.
+
+Output: predicted units sold for each candidate price.
+
+Module B — Conformal calibration
+Hold out a separate calibration period. Use conformalized quantile regression or another suitable conformal method to construct prediction intervals around demand.
+
+Example: predicted demand is 20 units, with an interval of 14–27 units at a nominal 90% coverage level.
+
+Output: lower and upper demand estimates. The stated coverage needs to be tested, especially when demand shifts over time.
+
+Module C — Neural contextual bandit
+Give the bandit the current context and a set of candidate prices. It estimates the reward associated with each action and learns from observed or simulated outcomes.
+
+Example candidate prices: ৳90, ৳95, ৳100, ৳105 and ৳110.
+
+Output: a selected price and an updated learning policy.
+
+Module D — Risk-aware price selection
+Use the calibrated demand estimates to evaluate downside risk. Add explicit business constraints such as minimum profit margin, inventory limits and maximum permitted price changes.
+
+Output: a price that balances expected profit against risk, rather than simply choosing the highest predicted revenue.
