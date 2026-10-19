@@ -1,1 +1,58 @@
 
+1. Title: Booking Funnel and Substitution-Aware User Behavior Modeling for Demand Prediction and Joint Room Pricing
+Conference: SIGIR 2026
+ICORE Ranking: A* 
+Research Gap: 
+1. Lack of Uncertainty Quantification: BFSNet predicts demand but does not provide calibrated prediction intervals to measure the reliability of its forecasts.
+2. Limited Adaptation to Demand Shifts: The model’s ability to adapt to sudden changes in customer behavior, seasonal demand, and competitor prices is not established.
+3. Lack of Risk-Aware Pricing: The pricing strategy maximizes revenue while maintaining minimum booking volume, but does not explicitly control potential financial losses.
+4. Lack of Contextual Bandit Learning: The framework uses a pricing heuristic rather than a contextual bandit that learns from feedback while balancing exploration and exploitation.
+5. Absence of Uncertainty-Based Safety Constraints: Prediction uncertainty is not explicitly used to prevent risky pricing decisions that could lead to significant revenue losses.
+
+ 
+ 
+
+2. Title: Learning to Price and Stock Under Contextual and Censored Demand
+Conference: IJCAI 2026
+ICORE Ranking: A 
+Research gaps
+1. Limited demand-model flexibility: The paper assumes a structured linear demand model based on predefined basis functions, which may not capture complex nonlinear relationships between prices and customer demand.
+2. Lack of conformal uncertainty calibration: The paper does not specifically investigate conformal prediction to assess whether demand prediction intervals provide reliable uncertainty estimates.
+3. Limited adaptation to changing demand: Changing customer preferences, promotions, seasonality, and market conditions may affect demand patterns. How to maintain reliable predictions and decisions under these changes remains a potential research direction.
+4. No integrated risk-aware neural contextual bandit framework: The paper uses an exploration-then-commit strategy. An adaptive neural contextual bandit with calibrated uncertainty and explicit risk constraints could be investigated as an alternative.
+5. Limited real-world validation: The paper evaluates its approach through numerical simulations. Testing on real retail transaction data could help assess practical effectiveness.
+6. Uncertainty under censored demand: Stockouts hide some customer demand, making demand estimation difficult. Combining censored-demand modeling with calibrated uncertainty could be explored if stockouts are included in the research setting.
+7. Limited explicit safety constraints: Your research could investigate constraints such as maximum price changes, minimum profit margins, and acceptable stockout risk rather than optimizing pricing performance alone.
+8. Trade-off between profit and risk: A potential direction is to evaluate whether uncertainty-aware pricing can improve profitability while reducing stockout risk, unstable price changes, and other undesirable business outcomes.
+9. Comparison with existing methods: The proposed framework should be compared with established approaches, such as fixed pricing, rule-based pricing, conventional machine-learning pricing, and standard contextual bandits, to determine whether calibration and risk constraints provide measurable benefits.
+10. Calibration under distribution shifts: Demand uncertainty estimates that work under historical conditions may become less reliable when market conditions change. Investigating how to detect and address this loss of calibration could be a valuable direction.
+
+
+
+3. Title: AIGP: An LLM-Based Framework for Long-Term Value Alignment in E-Commerce Pricing
+Conference: ACM SIGKDD 2026 (KDD 2026)
+ICORE Ranking: A* 
+Research Gap: 
+
+1. Lack of uncertainty calibration: AIGP uses a Long-Term Value Estimator (LTVE) to rank pricing actions, but it does not explicitly calibrate the uncertainty of demand predictions or value estimates. Therefore, the reliability of its recommendations under uncertain market conditions remains an open problem.
+2. Limited adaptation to changing market conditions: The framework learns from historical pricing data and business outcomes. Its ability to maintain reliable decisions when demand patterns, customer preferences, or market conditions change significantly requires further investigation.
+3. Limited cross-platform generalization: AIGP is evaluated on Alibaba’s Tao Factory marketplace. Its effectiveness across different e-commerce platforms, product categories, and business environments remains unverified.
+4. Dependence on historical data: The LTVE is trained on historical production logs. Its value estimates may become less reliable for new products or pricing actions rarely represented in the training data, despite the improvements from LLM-based reasoning.
+5. Limited explicit risk-aware optimization: AIGP balances long-term GMV and ROI, but it does not explicitly optimize downside risk, such as worst-case profit loss or stockout risk, as a separate decision objective.
+6. Limited evaluation of calibration over time: The paper evaluates business performance over 7-day and 14-day horizons, but does not establish whether prediction or value-estimation reliability remains calibrated as market conditions evolve.
+
+
+4. Title: FishFlow: A LLM-Empowered Dynamic Pricing Framework for Online Fleamarket Platform
+Conference: ACM Web Conference (WWW) 2026
+ICORE Ranking: A* 
+Research Gap: FishFlow combines LLMs, similar-item references, demand functions, and reinforcement learning to estimate prices for second-hand products. However, its evaluation focuses on a single online flea-market platform, so its effectiveness in broader retail markets remains uncertain. It also does not explicitly use calibrated demand uncertainty to guide pricing decisions. Future research could extend FishFlow to retail transaction data by combining reliable uncertainty estimates with risk-aware pricing and inventory constraints to protect profit and reduce stockout risk during changing demand conditions.
+
+
+5. Title: Pricing Online LLM Services with Data-Calibrated Stackelberg Routing Game
+Conference: AAAI-26 (AAAI Conference on Artificial Intelligence)
+ICORE Ranking: A* 
+Research Gap: PriLLM uses real OpenRouter data to model user preferences and optimize LLM service prices, achieving near-optimal profit with lower computation time. However, its evaluation focuses on LLM service routing rather than general retail pricing, and its model does not explicitly address calibrated demand uncertainty or inventory constraints. Future research could adapt its data-calibration approach to retail transaction data and combine it with uncertainty-aware pricing and inventory controls to protect profit and reduce stockout risk under changing demand.
+
+
+
+
