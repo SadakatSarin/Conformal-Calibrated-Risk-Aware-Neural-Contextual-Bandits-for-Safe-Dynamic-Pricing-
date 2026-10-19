@@ -1,0 +1,412 @@
+# Dynamic Pricing Research: Concepts and Learning Roadmap
+
+## Research Topic
+
+**Conformal-Calibrated, Risk-Aware Neural Contextual Bandits for Safe Dynamic Pricing**
+
+## 1. Introduction to Dynamic Pricing
+
+Dynamic pricing is a strategy in which a business adjusts product prices over time based on demand, inventory, competition, customer behavior, and market conditions.
+
+The goal is to select prices that improve business performance while satisfying constraints such as minimum profit margins, inventory limits, and acceptable risk.
+
+### Key Business Concepts
+
+| Term | Definition |
+|---|---|
+| Dynamic Pricing | Adjusting prices according to changing market conditions. |
+| Demand | The quantity of a product customers are willing and able to purchase. |
+| Supply | The quantity of a product available for sale. |
+| Price Elasticity of Demand | Measures how strongly demand responds to a price change. |
+| Revenue | Total income generated from sales. |
+| Profit | Revenue minus relevant costs. |
+| Marginal Cost | The additional cost of producing or supplying one more unit. |
+| Price Optimization | Selecting prices to maximize a defined business objective. |
+| Demand Function | Describes how demand depends on price and other variables. |
+| Demand Curve | Represents the relationship between price and quantity demanded. |
+| Willingness to Pay | The maximum price a customer is willing to pay. |
+| Reference Price | The price a customer considers normal or expected. |
+| Price Discrimination | Charging different prices to different customers or segments under specified conditions. |
+| Product Substitution | Switching from one product to another alternative. |
+| Cross-Price Elasticity | Measures how demand for one product responds to another product's price change. |
+| Cannibalization | When sales of one product reduce sales of another product from the same business. |
+
+### Important Formulas
+
+Revenue:
+
+`Revenue = Price × Quantity Sold`
+
+Profit:
+
+`Profit = Revenue − Total Relevant Costs`
+
+Price elasticity of demand:
+
+`Price Elasticity = (% Change in Quantity Demanded) / (% Change in Price)`
+
+For ordinary downward-sloping demand, elasticity is generally negative. Its absolute value indicates the strength of the response.
+
+---
+
+## 2. Factors Affecting Dynamic Pricing
+
+These factors can serve as features for demand prediction and pricing decisions.
+
+| Factor | Description |
+|---|---|
+| Product Price | The current selling price. |
+| Historical Demand | Previous sales or demand observations. |
+| Seasonality | Repeating demand patterns across seasons, months, or days. |
+| Promotions | Discounts and marketing campaigns. |
+| Competitor Prices | Prices charged by competing businesses. |
+| Inventory | The quantity of stock currently available. |
+| Customer Behavior | Browsing, purchasing, and product-selection patterns. |
+| Price Sensitivity | How customers react to price changes. |
+| Market Conditions | External conditions affecting demand and supply. |
+| Product Availability | Whether the product is available for purchase. |
+| Holidays and Events | Special occasions that may influence demand. |
+| Weather | Environmental conditions that may affect certain products. |
+| Product Characteristics | Category, brand, quality, and other product attributes. |
+| Customer Segments | Groups of customers with different preferences or purchasing patterns. |
+
+## 3. Demand Prediction and Machine Learning
+
+Demand prediction estimates future sales or demand using historical data and relevant market features.
+
+### Essential Concepts
+
+| Term | Definition |
+|---|---|
+| Demand Forecasting | Predicting future demand. |
+| Feature | An input variable used by a machine learning model. |
+| Target Variable | The outcome the model predicts, such as sales quantity. |
+| Training Data | Data used to learn model parameters. |
+| Validation Data | Data used to compare models and tune hyperparameters. |
+| Test Data | Held-out data used for final evaluation. |
+| Regression | Predicting numerical values. |
+| Classification | Predicting categories. |
+| Point Prediction | Producing a single predicted value. |
+| Probabilistic Prediction | Representing uncertainty about possible outcomes. |
+| Prediction Interval | An interval intended to contain an unknown outcome at a specified coverage level. |
+| Calibration | Assessing or adjusting whether predictions and their uncertainty match observed outcomes. |
+| Overfitting | Learning training data too closely and performing poorly on unseen data. |
+| Generalization | Performing well on unseen data. |
+| Feature Engineering | Creating useful features from raw data. |
+| Data Leakage | Using information during training that would not be available at decision time. |
+| Distribution Shift | A change in the data distribution between training and deployment. |
+| Concept Drift | A change in the relationship between inputs and outcomes over time. |
+
+### Important Demand Prediction Models
+
+- Linear Regression
+- Random Forest Regressor
+- Gradient Boosting
+- LightGBM
+- XGBoost
+- Temporal Fusion Transformer (TFT)
+- N-HiTS
+- Other probabilistic forecasting models
+
+Model selection should depend on the dataset, forecasting horizon, computational budget, and research objectives.
+
+---
+
+## 4. Contextual Bandits
+
+A contextual bandit is a sequential decision-making framework that uses information about the current situation to select an action and learns from the resulting reward.
+
+In dynamic pricing, the context describes the market situation, the action is the selected price, and the reward may represent profit.
+
+### Core Concepts
+
+| Term | Definition |
+|---|---|
+| Agent | The system making pricing decisions. |
+| Environment | The market in which the agent operates. |
+| Context | Information available before selecting a price. |
+| Action | A pricing decision. |
+| Reward | The outcome the agent seeks to maximize. |
+| Policy | A rule or strategy for selecting actions. |
+| Contextual Bandit | A decision-making framework that uses context to choose actions and learn from feedback. |
+| Multi-Armed Bandit | A simpler bandit setting without contextual inputs. |
+| Exploration | Trying actions to learn their outcomes. |
+| Exploitation | Selecting an action believed to provide a high reward. |
+| Exploration–Exploitation Trade-off | Balancing learning against immediate performance. |
+| Cumulative Reward | The total reward obtained over multiple decisions. |
+| Regret | The difference between achieved reward and an appropriate optimal benchmark. |
+| Action Space | The set of available pricing actions. |
+| Online Learning | Updating a model using newly observed data. |
+| Offline Learning | Learning from an existing dataset. |
+| Partial Feedback | Observing the outcome of the chosen action without observing every alternative. |
+
+### Important Contextual Bandit Algorithms
+
+| Algorithm | Main Idea |
+|---|---|
+| Epsilon-Greedy | Usually selects the best-known action but occasionally explores. |
+| UCB | Uses an uncertainty-based bonus to guide exploration. |
+| LinUCB | Uses a linear reward model and confidence bounds. |
+| Thompson Sampling | Uses sampling from an estimated reward distribution to select actions. |
+| NeuralUCB | Uses neural networks and uncertainty estimates for exploration. |
+| NeuralTS | Uses neural reward modeling and sampling-based exploration. |
+
+For this research, NeuralUCB and NeuralTS are potential candidates for the pricing decision component.
+
+---
+
+## 5. Conformal Prediction and Calibration
+
+Conformal prediction is a framework for constructing prediction sets or intervals with statistical coverage guarantees under appropriate assumptions.
+
+In this research, conformal methods may help quantify uncertainty or regulate how aggressively a new pricing policy is permitted to act.
+
+### Essential Concepts
+
+| Term | Definition |
+|---|---|
+| Conformal Prediction | A framework for constructing prediction sets or intervals with coverage guarantees under specified assumptions. |
+| Conformal Calibration | Using calibration data to determine prediction or decision thresholds. |
+| Calibration Dataset | Data used to calculate calibration quantities. |
+| Coverage | The proportion or probability of outcomes contained within a prediction set or interval. |
+| Miscoverage | The event that an outcome falls outside the prediction set. |
+| Prediction Set | A set of possible outcomes produced by a prediction method. |
+| Quantile | A value below which a specified proportion of observations falls. |
+| Quantile Regression | Predicting a selected quantile of an outcome distribution. |
+| Conformalized Quantile Regression (CQR) | A conformal method that adjusts quantile-based prediction intervals. |
+| Adaptive Conformal Prediction | Methods that adapt calibration based on new observations or changing conditions. |
+| Risk-Controlled Prediction | Constructing predictions or decisions to control a specified risk measure. |
+| Finite-Sample Guarantee | A theoretical guarantee that applies with finite data under stated assumptions. |
+| Distribution-Free Guarantee | A guarantee that does not require specifying a particular parametric distribution, although other assumptions may remain necessary. |
+| Uncertainty Quantification | Representing uncertainty in predictions or decisions. |
+
+**Important:** Prediction-interval coverage does not automatically guarantee pricing-policy safety. The specific method must establish the required policy-level risk guarantee.
+
+---
+
+## 6. Safe Exploration and Risk-Aware Optimization
+
+Safe exploration aims to improve an agent's performance while respecting defined safety requirements.
+
+### Important Concepts
+
+| Term | Definition |
+|---|---|
+| Safe Exploration | Learning through new actions while satisfying safety requirements. |
+| Reference Policy | An existing policy used as a baseline or safety reference. |
+| Candidate Policy | A new policy being evaluated or deployed. |
+| Policy Optimization | Improving the strategy used to select actions. |
+| Policy Shift | A change in the behavior of a policy. |
+| Risk Tolerance | The maximum acceptable risk under a defined risk measure. |
+| Safety Constraint | A condition that decisions or outcomes must satisfy. |
+| Constraint Violation | Failure to satisfy a specified constraint. |
+| Risk Bound | An upper or lower bound on a defined risk measure. |
+| Expected Loss | The average value of a defined loss measure. |
+| Downside Risk | Risk associated with particularly poor outcomes. |
+| Value at Risk (VaR) | A specified quantile of a loss distribution. |
+| Conditional Value at Risk (CVaR) | A measure of tail loss beyond a specified VaR threshold, under a chosen convention. |
+| Lower Confidence Bound (LCB) | A conservative lower bound on an estimated quantity. |
+| Chance Constraint | A constraint requiring a condition to hold with a specified probability. |
+| Robust Optimization | Optimizing decisions under uncertainty about the environment or model. |
+| Risk Budget | An allocated amount of acceptable risk. |
+
+### Possible Pricing Safety Constraints
+
+- Maintain a minimum profit margin.
+- Restrict the maximum price change per decision.
+- Avoid prices outside an approved range.
+- Respect inventory limitations.
+- Control the probability or expected severity of a defined loss.
+- Limit violations of specified business constraints.
+
+The constraints should be selected according to the business setting and the formal guarantees the proposed method can support.
+
+---
+
+## 7. Optimization and Causal Inference
+
+Prediction alone cannot determine the causal effect of changing a price.
+
+| Term | Definition |
+|---|---|
+| Objective Function | The quantity being optimized, such as profit. |
+| Constrained Optimization | Optimizing an objective while satisfying restrictions. |
+| Optimal Price | The best price under a defined objective, context, and assumptions. |
+| Counterfactual | An outcome that would have occurred under an alternative action. |
+| Causal Inference | Estimating cause-and-effect relationships. |
+| Treatment Effect | The effect of a price change or intervention on an outcome. |
+| Confounding | A situation where another factor influences both the action and the outcome. |
+| Price Endogeneity | The problem that price may be related to unobserved factors that also influence demand. |
+| Double Machine Learning | A framework for estimating certain causal effects using machine learning and appropriate assumptions. |
+| Off-Policy Evaluation (OPE) | Estimating the performance of a new policy using data collected by another policy. |
+| Inverse Propensity Scoring (IPS) | Reweighting observed outcomes using action-selection probabilities. |
+| Doubly Robust Estimation | Combining an outcome model with propensity weighting for policy or causal estimation under suitable assumptions. |
+| Simulator | An environment for evaluating pricing decisions without immediately deploying them in a live market. |
+| Sensitivity Analysis | Examining how conclusions change under different assumptions. |
+
+Historical transaction data may not reveal demand at prices that were never offered. Counterfactual evaluation therefore requires appropriate assumptions, models, logged action probabilities, randomized variation, or a validated simulator.
+
+---
+
+## 8. Evaluation Metrics
+
+A pricing system should be evaluated on both predictive performance and decision-making performance.
+
+### Demand Prediction Metrics
+
+| Metric | Purpose |
+|---|---|
+| MAE | Measures average absolute prediction error. |
+| RMSE | Penalizes larger prediction errors more strongly. |
+| Empirical Coverage | Measures how often prediction intervals contain observed outcomes. |
+| Interval Width | Measures the width of prediction intervals. |
+| Calibration Error | Measures discrepancies between predicted confidence or probabilities and observed outcomes, according to the chosen definition. |
+
+### Pricing Policy Metrics
+
+| Metric | Purpose |
+|---|---|
+| Revenue | Measures total sales income. |
+| Profit | Measures earnings after relevant costs. |
+| Cumulative Regret | Measures the cumulative gap from a defined optimal benchmark. |
+| Stockout Rate | Measures how frequently stockouts occur. |
+| Inventory Leftover | Measures unsold inventory remaining at the end of a period. |
+| Constraint Violation Rate | Measures the frequency of safety or business constraint violations. |
+| CVaR | Measures tail risk under a defined loss convention. |
+| Price Stability | Measures the frequency or magnitude of price changes. |
+| Policy Improvement | Measures performance relative to a baseline policy. |
+| Computational Cost | Measures the resources required for training and inference. |
+
+Prediction metrics and policy metrics should not be treated as interchangeable. A model with low demand prediction error does not necessarily produce the most profitable pricing policy.
+
+---
+
+## 9. Datasets and Experimental Design
+
+### Important Data Terms
+
+| Term | Definition |
+|---|---|
+| Transaction Data | Records of completed sales. |
+| Historical Price | A price observed in a previous period. |
+| Sales Quantity | The number of units sold. |
+| Timestamp | The time at which an observation occurred. |
+| Product ID | An identifier for a product. |
+| Exogenous Variable | An external factor that may influence demand. |
+| Time-Series Data | Data organized by time. |
+| Temporal Validation | Evaluating a model on later periods than those used for training. |
+| Train/Validation/Test Split | Separating data for learning, model selection, and final evaluation. |
+| Logged Policy | The policy that generated historical actions. |
+| Propensity Score | The probability of an action being selected given the observed context. |
+| Action Logging | Recording contexts, actions, outcomes, and relevant selection probabilities. |
+| Offline Evaluation | Evaluating a policy using existing data. |
+| Online Evaluation | Evaluating a policy in a live environment. |
+| A/B Testing | Comparing alternatives through a controlled experiment. |
+| Synthetic Data | Artificially generated observations. |
+| Ablation Study | Removing components to measure their contribution. |
+| Baseline | A reference method used for comparison. |
+
+### Dataset Selection Considerations
+
+A useful dataset should ideally include:
+
+- Historical product prices.
+- Sales quantities or demand observations.
+- Product identifiers and timestamps.
+- Inventory information, when available.
+- Promotions and seasonal variables.
+- Competitor prices, if relevant to the research question.
+- Sufficient variation in prices to evaluate alternative decisions.
+- Action-selection probabilities or experimental information, if required for off-policy evaluation.
+
+Not every retail dataset contains all these variables. Missing variables should be documented rather than assumed to exist.
+
+---
+
+## 10. Advanced Research Concepts
+
+| Term | Definition |
+|---|---|
+| Non-Stationarity | Changes in the environment's statistical behavior over time. |
+| Distribution Shift Detection | Identifying changes between training and deployment data. |
+| Online Calibration | Updating calibration procedures as new observations become available. |
+| Adaptive Learning | Updating a model or policy in response to new information. |
+| Non-Monotonic Loss | A loss function whose value does not consistently move in one direction as its input changes. |
+| Delayed Reward | Feedback that arrives after an action is taken. |
+| Cold Start | Making decisions with little or no historical information. |
+| Hyperparameter Tuning | Selecting model settings that influence learning. |
+| Ensemble Learning | Combining predictions from multiple models. |
+| Generalization Under Shift | Maintaining useful performance when market conditions change. |
+| Temporal Drift | Changes in data patterns over time. |
+| Price Stability | Avoiding excessive or unnecessary price fluctuations. |
+
+---
+
+## 11. Recommended Learning Roadmap
+
+### Stage 1: Business Fundamentals
+- Demand and supply.
+- Price elasticity.
+- Revenue and profit.
+- Demand functions.
+- Inventory and stockouts.
+- Factors affecting demand.
+
+### Stage 2: Machine Learning
+- Regression.
+- Feature engineering.
+- Demand forecasting.
+- Probabilistic prediction.
+- Calibration.
+- Distribution shift.
+
+### Stage 3: Pricing Decisions
+- Objective functions.
+- Constrained optimization.
+- Contextual bandits.
+- Exploration versus exploitation.
+- UCB and Thompson Sampling.
+
+### Stage 4: Core Research Methods
+- NeuralUCB and NeuralTS.
+- Conformal prediction.
+- Conformalized Quantile Regression.
+- Safe exploration.
+- Risk constraints.
+- Policy-level risk guarantees.
+
+### Stage 5: Experimental Evaluation
+- Dataset analysis.
+- Counterfactual reasoning.
+- Off-policy evaluation.
+- Baseline comparisons.
+- Profit and regret evaluation.
+- Safety and robustness experiments.
+- Ablation studies.
+
+---
+
+## 12. Core Concepts to Prioritize
+
+For the proposed research, prioritize these ten concepts first:
+
+1. Demand Function
+2. Price Elasticity of Demand
+3. Profit Optimization
+4. Probabilistic Demand Forecasting
+5. Contextual Bandits
+6. NeuralUCB
+7. Conformal Calibration
+8. Risk Constraints
+9. Off-Policy Evaluation
+10. Distribution Shift
+
+## Research Objective
+
+The proposed research aims to investigate how conformal calibration and risk-aware neural contextual bandits can support dynamic pricing decisions that improve business performance while respecting specified safety constraints, particularly when demand conditions change over time.
+
+The contribution must be established through a literature review, clearly defined risk guarantees, appropriate baselines, and reproducible experiments.
+
+## Important Note
+
+This document is a conceptual learning guide, not a claim that a particular algorithm or dataset has already been validated. All formal guarantees depend on the assumptions of the selected methods and the experimental setting.
