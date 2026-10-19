@@ -1,0 +1,49 @@
+6. Pricing Online LLM Services with Data-Calibrated Stackelberg Routing
+Game.
+The main goal of this paper is to help LLM service providers choose the best price to earn more profit while attracting users.
+The authors propose a system called PriLLM to solve this problem.
+A user sends a request to the platform. The platform selects a suitable provider based on the user's preferences, price, speed, and quality.This process is called LLM routing.
+The paper identifies two main types of factors.
+Factor	Easy explanation	Example
+Objective factors	Measurable information	Price, response time, generation speed
+Subjective factors	How users personally value a service	Trust in a model, usefulness, brand reputation
+Providers must decide how much to charge for their services.
+Lower price->higher demand 
+Higher price-.>lower demand 
+Traditional cloud-service pricing methods do not fully capture the special characteristics of LLM routing.The authors argue that a more realistic model is needed to represent these market conditions.
+Leader: The service provider decides the price.
+Follower: The users decide which provider to use.
+The authors propose PriLLM, a framework for learning user preferences and optimizing LLM service prices
+Previous research does not adequately combine realistic LLM service pricing, real user preferences, and efficient optimization. PriLLM aims to address these limitations by learning from real market data and using a scalable neural network to optimize pricing.
+Whats unique-The related paper, PriLLM, focuses on optimizing prices for LLM services. Your research focuses on retail pricing under demand uncertainty. Both involve dynamic pricing, but your potential novelty lies in how you estimate uncertainty, control risk, and learn pricing decisions from retail data.
+7. Multi-Agent Reinforcement Learning for Modeling, Simulating, and
+Optimizing Energy Markets.
+The paper proposes an AI-based system that helps the electricity system operator decide:
+Dynamic pricing: When and how electricity prices should change.
+Dispatch scheduling: How much electricity each power plant should produce and when.
+Cost reduction: How to reduce the cost of producing and supplying electricity.
+Grid stability: How to keep electricity supply and demand balanced.
+The researchers also develop a simulation environment called Energy-Net to test their approach.
+Their experiments show that MARL can help electricity market participants and system operators make better decisions in complex and changing situations.
+MARL stands for Multi-Agent Reinforcement Learning-It is an AI technique in which multiple AI agents learn how to make decisions by interacting with an environment and receiving rewards or penalties.
+Field	Details
+Method	Multi-Agent Reinforcement Learning (MARL)
+Application	Electricity market optimization
+Key techniques	Dynamic pricing, dispatch scheduling, multi-agent learning
+Main contribution	MARL framework and Energy-Net simulator
+Main objective	Reduce operating costs and maintain grid stability
+Research area	AI, reinforcement learning, energy systems
+
+8.Optimal Contextual Pricing under Agnostic Non-Lipschitz Demand —NeurIPS 2026
+
+Field	Details in Easy English
+Main idea	A new algorithm for setting prices based on customer information.
+Problem	Existing methods struggle when customer demand changes suddenly at certain prices.
+Proposed method	Conservative-Markdown Redirect-UCB Pricing (CMRUP).
+Main techniques	Linear regression, randomized pricing, confidence bounds, and adaptive price selection.
+Dataset	No real-world dataset is specified in the provided description; the method is presented theoretically.
+Main result	Achieves an expected regret of \(\tilde{O}(T^{2/3})\), matching the theoretical lower bound up to logarithmic factors.
+Computational complexity	\(\tilde{O}(T^{4/3})\) for the direct implementation described.
+Limitation	It assumes a linear buyer-valuation model and focuses on a specific contextual pricing problem.
+Connection to your proposed research: Your topic, Conformal-Calibrated, Risk-Aware Neural Contextual Bandits for Safe Dynamic Pricing on Retail Transaction Data, is related because both studies address contextual dynamic pricing and uncertainty.
+Main difference: CMRUP focuses on theoretical regret guarantees under non-smooth demand. Your proposed work aims to combine conformal calibration, neural contextual bandits, and risk-aware pricing using retail transaction data.
