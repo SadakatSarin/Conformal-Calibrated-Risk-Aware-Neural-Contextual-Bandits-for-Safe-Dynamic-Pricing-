@@ -1,1 +1,1 @@
-# onformal-Calibrated-Risk-Aware-Neural-Contextual-Bandits-for-Safe-Dynamic-Pricing-
+# onformal-Calibrated-Risk-Aware-Neural-Contextual-Bandits-for-Safe-Dynamic-Pricing
