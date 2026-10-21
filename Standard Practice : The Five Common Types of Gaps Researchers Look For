@@ -1,0 +1,19 @@
+The Five Common Types of Gaps Researchers Look For
+A widely used framework categorizes gaps into five main types. You can use this as a checklist when analyzing the BFSNet paper:
+
+1.Population Gap: Is a specific group, region, or demographic missing? For BFSNet, the evaluation is on a single platform's data. A researcher could note a population/contextual gap regarding its applicability to other OTAs or hotel segments (e.g., budget vs. luxury).
+
+2.Methodological Gap: Does nearly every study use the same method, leaving other approaches untried? While BFSNet uses DML for causal inference, a researcher could point out a methodological gap if the field relies heavily on offline evaluation and lacks online A/B testing validation.
+
+3.Temporal Gap: Has something changed since the last major study? The BFSNet paper is from 2026. A researcher could question whether its substitution patterns hold after significant market shifts (e.g., post-pandemic travel behavior changes).
+
+4.Contextual/Geographic Gap: Is there strong research in one country but little in another? If BFSNet uses data from Meituan (China), a clear contextual gap is its unverified generalizability to Western markets (e.g., Booking.com, Expedia).
+
+5.Contradiction Gap: Do studies disagree without anyone attempting to reconcile them? While not a gap in this single paper, if you find other studies claiming different dominant factors for hotel demand, you can highlight a contradictory evidence gap that your work aims to resolve.
+
+The "Gap-Spotting" vs. "Problematization" Distinction
+More advanced researchers distinguish between two approaches:
+
+1.Gap-Spotting: This is the practice of finding a "hole" in the literature to fill. It is additive and relatively straightforward.
+
+2.Problematization: This is a more critical approach that challenges the underlying assumptions of a body of work. For a paper like BFSNet, a researcher engaging in problematization might not just ask "what is missing?" but rather "is the entire framing of 'substitution' as a price-driven, monotonic relationship correct? " or "does the two-stage funnel decomposition accurately capture the complexity of user decision-making? " This leads to a more profound and impactful gap.
