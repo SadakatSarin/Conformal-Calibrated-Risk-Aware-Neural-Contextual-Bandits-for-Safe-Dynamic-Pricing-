@@ -68,3 +68,25 @@ conference : ICLR 2026
 
 
 
+10. Learning Neural Contextual Bandits Through Perturbed Rewards
+Conference: ICLR 2026 (A*)
+
+What it is (Simply): Neural contextual bandits are powerful but can be computationally expensive because they explore by constantly adjusting their internal network parameters. This paper introduces a clever trick: instead of expensive parameter tuning, it perturbs the observed rewards to encourage exploration. This makes the algorithm much more efficient while still maintaining strong theoretical performance.
+Relevance to Your Work: This is directly related to the "Neural Contextual Bandits" component of your title. It provides a state-of-the-art, computationally efficient method for the core learning engine you plan to use. You can potentially adopt or compare against this approach while adding your unique conformal calibration layer for safety.
+
+11. Gated Decoupled Compositional Bandits
+Conference: ICML 2026 (A*)
+
+What it is (Simply): This paper proposes a flexible bandit framework that separates the decision into two parts: choosing a "nominal" action and then passing it through a "gate" that can modify or veto it. The authors show this framework applies to short-term rental dynamic pricing and other high-stakes domains. The "gate" is crucial for enforcing safety or business constraints.
+
+Relevance to Your Work: This is conceptually very close to your idea of "Safe Dynamic Pricing." The "gate" mechanism is a form of risk control. You can position your conformal calibration as a more statistically principled and adaptive alternative to a hand-designed gate, providing formal guarantees on risk (e.g., the probability of setting a dangerously low price).
+
+12. Fast Conformal Prediction Using Conditional Interquantile Intervals
+Conference: AAAI 2026 (A*)
+
+What it is (Simply): Conformal prediction is a technique for creating prediction intervals (e.g., "the price will be between 
+X
+X and )Y$ with 95% confidence"). This paper introduces a new, faster method for generating these intervals that are "near-minimal" (i.e., very sharp) while still guaranteeing the desired coverage.
+
+Relevance to Your Work: This directly supports the "Conformal-Calibrated" aspect of your research. To build a risk-aware pricing system, you need a reliable way to quantify uncertainty. This paper provides an efficient, modern method for generating the calibrated uncertainty sets that your bandit algorithm will use to make safe pricing decisions.
+
